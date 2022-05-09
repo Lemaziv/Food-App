@@ -118,7 +118,7 @@
                 android:layout_height="60dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/naranja_primario"
-                android:text="@string/registrarse" />
+                android:text="@string/registrarseRegistro" />
 
         </LinearLayout>
     </ScrollView>

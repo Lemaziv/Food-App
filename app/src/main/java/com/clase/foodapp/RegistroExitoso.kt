@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 
-class RecuperarCuenta : AppCompatActivity(){
+class RegistroExitoso : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.recuperar_cuenta)
+        setContentView(R.layout.registro_exitoso)
 
-        val backRecup = findViewById<ImageButton>(R.id.BackRecupCuenta)
-        backRecup.setOnClickListener {
+        val backButton = findViewById<ImageButton>(R.id.BackRegistroFinal)
+        backButton.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
     }

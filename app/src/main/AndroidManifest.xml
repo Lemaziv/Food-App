@@ -10,9 +10,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodApp">
         <activity
+            android:name=".Mapa"
+            android:exported="false" />
+        <activity
+            android:name=".Calificar"
+            android:exported="false" />
+        <activity
+            android:name=".Pagar"
+            android:exported="false" />
+        <activity
+            android:name=".Config"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroExitoso"
+            android:exported="false" />
+        <activity
             android:name=".Menu_Principal"
             android:exported="false"
             android:label="@string/title_activity_menu_principal" />
+        <activity
+            android:name=".Carrito"
+            android:exported="true" />
+        <activity
+            android:name=".RecuperarCuenta"
+            android:exported="true" />
+        <activity
+            android:name=".Registro"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

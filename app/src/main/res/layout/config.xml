@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Config">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/naranja_primario"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="start"
+                android:backgroundTint="#00FFFFFF"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                android:tint="@color/gris_oscuro" />
+
+            <TextView
+                android:id="@+id/carritoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="50dp"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:text="@string/editPerfil"
+                android:textAlignment="center"
+                android:textColor="@color/gris_oscuro"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile2"
+                        android:layout_width="match_parent"
+                        android:layout_height="95dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:src="@drawable/img" />
+
+                    <EditText
+                        android:id="@+id/nombre2"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="30dp"
+                        android:hint="@string/nombre"
+                        android:paddingLeft="18dp"
+                        android:paddingRight="18dp"
+                        android:textColorHint="@color/gris_primario" />
+
+                    <EditText
+                        android:id="@+id/apellidoP2"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="30dp"
+                        android:hint="@string/apellidoPat"
+                        android:paddingLeft="18dp"
+                        android:paddingRight="18dp"
+                        android:textColorHint="@color/gris_primario" />
+
+                    <EditText
+                        android:id="@+id/apellidoM2"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="30dp"
+                        android:hint="@string/apellidoMat"
+                        android:paddingLeft="18dp"
+                        android:paddingRight="18dp"
+                        android:textColorHint="@color/gris_primario" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/sexo2"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="30dp"
+                        android:hint="@string/sexo"
+                        android:inputType="text"
+                        android:paddingLeft="18dp"
+                        android:paddingRight="18dp"
+                        android:textColorHint="@color/gris_primario" />
+
+                    <EditText
+                        android:id="@+id/fechaNacimiento2"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="30dp"
+                        android:hint="@string/fechaNac"
+                        android:inputType="date"
+                        android:paddingLeft="18dp"
+                        android:paddingRight="18dp"
+                        android:textColorHint="@color/gris_primario" />
+                </LinearLayout>
+            </ScrollView>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom|right|end"
+                android:layout_margin="15dp"
+                android:background="@color/naranja_primario"
+                android:backgroundTint="@color/naranja_primario"
+                android:clickable="true"
+                app:srcCompat="@drawable/ic_baseline_check_24" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</LinearLayout>

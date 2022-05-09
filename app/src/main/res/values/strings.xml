@@ -25,4 +25,7 @@
     <string name="usuario">Vicente Elias Zambada</string>
     <string name="ubicaciones">Ubicaciones</string>
     <string name="carrito">Tu carrito</string>
+    <string name="regExitoso">Registro Exitoso</string>
+    <string name="graciasRegistro">¡Gracias por registrarte, bienvenido a  FeedMe!</string>
+    <string name="editPerfil">Editar Perfil</string>
 </resources>
