@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gris_primario">#616161</color>
+    <color name="gris_secundario">#8e8e8e</color>
+    <color name="gris_oscuro">#373737</color>
+    <color name="naranja_primario">#fb8c00</color>
+    <color name="naranja_secundario">#ffbd45</color>
+    <color name="naranja_oscuro">#c25e00</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

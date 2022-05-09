@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecuperarCuenta">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <ImageButton
+            android:id="@+id/BackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            app:srcCompat="@drawable/ic_close" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/logo_texto" />
+
+        <TextView
+            android:id="@+id/recupCuenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/recupCuenta"
+            android:textAlignment="center"
+            android:textColor="@color/naranja_primario"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/correoRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="150dp"
+            android:hint="@string/telefonoHint"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:textColorHint="@color/gris_primario" />
+
+        <Button
+            android:id="@+id/registrarseFormulario"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/naranja_primario"
+            android:text="RECUPERAR" />
+
+    </LinearLayout>
+</LinearLayout>
