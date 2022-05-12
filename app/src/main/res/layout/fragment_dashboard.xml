@@ -29,7 +29,7 @@
                 app:queryHint="@string/busqueda" />
 
             <ImageButton
-                android:id="@+id/carrito"
+                android:id="@+id/carritoDash"
                 android:layout_width="100dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"

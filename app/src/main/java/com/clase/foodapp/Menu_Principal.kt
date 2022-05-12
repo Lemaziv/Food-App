@@ -1,6 +1,9 @@
 package com.clase.foodapp
 
+import android.app.PendingIntent.getActivity
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -31,5 +34,6 @@ class Menu_Principal : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
     }
 }
