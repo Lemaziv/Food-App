@@ -21,12 +21,12 @@
             app:srcCompat="@drawable/logo_imagen" />
 
         <EditText
-            android:id="@+id/usuario"
+            android:id="@+id/Categoria"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginBottom="30dp"
             android:hint="@string/telefonoHint"
-            android:inputType="number"
+            android:inputType="textEmailAddress"
             android:paddingLeft="18dp"
             android:paddingRight="18dp"
             android:textColorHint="@color/gris_primario" />

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">FoodApp</string>
     <string name="contraHint">Contraseña*</string>
-    <string name="telefonoHint">Número Telefónico*</string>
+    <string name="telefonoHint">Correo Electronico*</string>
     <string name="registrarse">Registrarse</string>
     <string name="registrarseRegistro">REGISTRARSE</string>
     <string name="recupCuenta">Recuperar Cuenta</string>
@@ -16,9 +16,11 @@
     <string name="infoInicioSesion">Información de inicio de sesión</string>
     <string name="recuperar">Recuperar</string>
     <string name="title_activity_menu_principal">Menu_Principal</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    ///Menu///
+    <string name="title_inicio">Inicio</string>
+    <string name="title_categorias">Categorias</string>
+    <string name="title_perfil">Perfil</string>
+    //////////
     <string name="recomendados">Recomendados para ti</string>
     <string name="busqueda">¿Qué quieres comer?</string>
     <string name="categorias">Categorias</string>

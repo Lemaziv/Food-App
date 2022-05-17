@@ -4,6 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AlertDialog
+import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,8 +14,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val iniSesion = findViewById<Button>(R.id.ButtonIS)
-        iniSesion.setOnClickListener {
-            startActivity(Intent(this, Menu_Principal::class.java))
+        iniSesion.setOnClickListener{
+            if (Categoria.text.isNotEmpty() && contraseña.text.isNotEmpty()){
+                FirebaseAuth.getInstance()
+                    .signInWithEmailAndPassword(Categoria.text.toString(),
+                        contraseña.text.toString()).addOnCompleteListener {
+                        if(it.isSuccessful){
+                            startActivity(Intent(this, Menu_Principal::class.java))
+                        } else {
+                            showAlert()
+                        }
+                    }
+            } else {
+                showAlert()
+            }
         }
 
         val recupCuenta = findViewById<Button>(R.id.ButtonRecuperarCuenta)
@@ -24,5 +39,14 @@ class MainActivity : AppCompatActivity() {
         preregistro.setOnClickListener {
             startActivity(Intent(this, Registro::class.java))
         }
+    }
+
+    private fun showAlert(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Se ha producido un error autenticando al usuario")
+        builder.setPositiveButton("Aceptar",null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 }
