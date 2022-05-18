@@ -30,4 +30,5 @@
     <string name="regExitoso">Registro Exitoso</string>
     <string name="graciasRegistro">¡Gracias por registrarte, bienvenido a  FeedMe!</string>
     <string name="editPerfil">Editar Perfil</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

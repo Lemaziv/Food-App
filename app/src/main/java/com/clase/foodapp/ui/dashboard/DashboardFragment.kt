@@ -1,5 +1,6 @@
 package com.clase.foodapp.ui.dashboard
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,10 +12,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.clase.foodapp.Carrito
 import com.clase.foodapp.R
 import com.clase.foodapp.databinding.FragmentDashboardBinding
 import com.clase.foodapp.recyclers.AdapterRestaurante
 import com.clase.foodapp.recyclers.Restaurante
+import kotlinx.android.synthetic.main.fragment_dashboard.*
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class DashboardFragment : Fragment() {
 
@@ -60,6 +64,16 @@ class DashboardFragment : Fragment() {
         dashboardViewModel.text.observe(viewLifecycleOwner) {
         }
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        carritoDash.setOnClickListener {
+            activity?.let {
+                val intent = Intent(it, Carrito::class.java)
+                it.startActivity(intent)
+            }
+        }
     }
 
     override fun onDestroyView() {

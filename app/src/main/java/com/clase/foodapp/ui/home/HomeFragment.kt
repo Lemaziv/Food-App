@@ -16,6 +16,7 @@ import com.clase.foodapp.R
 import com.clase.foodapp.databinding.FragmentHomeBinding
 import com.clase.foodapp.recyclers.AdapterRestaurante
 import com.clase.foodapp.recyclers.Restaurante
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
@@ -61,15 +62,20 @@ class HomeFragment : Fragment() {
         val adapter = AdapterRestaurante(restaurantes)
         recyclerView.adapter = adapter
 
-        ////////////////////////////////////////////////////// MOVIMIENTO ENTRE ACTIVITIES
-        val bind = FragmentHomeBinding.inflate(layoutInflater)
-        bind.carritoHome.setOnClickListener{
-            val intent = Intent (this@HomeFragment.requireContext(), Carrito::class.java)
-            startActivity(intent)
-        }
-
         return root
     }
+
+    ////////////////////////////////////////////////////// MOVIMIENTO ENTRE ACTIVITIES
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        carritoHome.setOnClickListener {
+            activity?.let {
+                val intent = Intent(it, Carrito::class.java)
+                it.startActivity(intent)
+            }
+        }
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

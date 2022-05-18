@@ -21,7 +21,7 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/configButton"
+                android:id="@+id/backCarrito"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="end"
