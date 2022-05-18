@@ -1,6 +1,6 @@
 package com.clase.foodapp.recyclers
 
-class Restaurante (
+data class Restaurante (
     val NombreRestaurante: String,
     val Categoria: String
 )

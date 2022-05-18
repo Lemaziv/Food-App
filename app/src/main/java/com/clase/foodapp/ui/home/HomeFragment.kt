@@ -54,6 +54,9 @@ class HomeFragment : Fragment() {
         restaurantes.add(Restaurante("Chester", "Pastas"))
         restaurantes.add(Restaurante("Chester", "Pastas"))
         restaurantes.add(Restaurante("Chester", "Pastas"))
+        restaurantes.add(Restaurante("Chester", "Pastas"))
+        restaurantes.add(Restaurante("Chester", "Pastas"))
+
 
         val adapter = AdapterRestaurante(restaurantes)
         recyclerView.adapter = adapter
