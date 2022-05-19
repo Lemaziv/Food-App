@@ -3,18 +3,20 @@ package com.clase.foodapp.recyclers
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.clase.foodapp.R
+import com.squareup.picasso.Picasso
 
 class AdapterCategoria (val categoriaList: ArrayList<Categoria>) : RecyclerView.Adapter<AdapterCategoria.ViewHolder>(){
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         fun bindItems(publicacion: Categoria){
-            val img = itemView.findViewById(R.id.ImgCategoria) as TextView
+            val imagen = itemView.findViewById(R.id.imgCategoria) as ImageView
             val nombre = itemView.findViewById(R.id.NombreCategoria) as TextView
 
-            img.text = publicacion.ImgCategoria.toString()
+            Picasso.get().load(publicacion.ImgCategoria).into(imagen)
             nombre.text = publicacion.NombreCategoria.toString()
         }
     }

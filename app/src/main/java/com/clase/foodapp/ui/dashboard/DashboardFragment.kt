@@ -15,8 +15,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.clase.foodapp.Carrito
 import com.clase.foodapp.R
 import com.clase.foodapp.databinding.FragmentDashboardBinding
+import com.clase.foodapp.recyclers.AdapterCategoria
 import com.clase.foodapp.recyclers.AdapterRestaurante
+import com.clase.foodapp.recyclers.Categoria
 import com.clase.foodapp.recyclers.Restaurante
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -43,21 +46,17 @@ class DashboardFragment : Fragment() {
         val recyclerView: RecyclerView = root.findViewById(R.id.recyclerviewRestaurante)
         recyclerView.layoutManager = GridLayoutManager(this.context, 2)
 
-        val restaurantes = ArrayList<Restaurante>()
-        restaurantes.add(Restaurante("BurgerKing", "Hamburguesas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
+        val categorias = ArrayList<Categoria>()
+        val adapter = AdapterCategoria(categorias)
+        val db = FirebaseFirestore.getInstance()
+        db.collection("Categorias").get().addOnSuccessListener { result ->
+            result.documents.forEach {
+                categorias.add(Categoria(it.get("Logo").toString(), it.get("Nombre").toString()))
+            }
+            adapter.notifyDataSetChanged()
+        }
 
-        val adapter = AdapterRestaurante(restaurantes)
+
         recyclerView.adapter = adapter
 
 

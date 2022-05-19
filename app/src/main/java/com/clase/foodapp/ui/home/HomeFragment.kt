@@ -1,8 +1,10 @@
 package com.clase.foodapp.ui.home
 
 import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +18,8 @@ import com.clase.foodapp.R
 import com.clase.foodapp.databinding.FragmentHomeBinding
 import com.clase.foodapp.recyclers.AdapterRestaurante
 import com.clase.foodapp.recyclers.Restaurante
+import com.google.firebase.firestore.*
+import com.google.firebase.firestore.auth.User
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -47,19 +51,15 @@ class HomeFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(this.context, LinearLayout.VERTICAL, false)
 
         val restaurantes = ArrayList<Restaurante>()
-        restaurantes.add(Restaurante("BurgerKing", "Hamburguesas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
-        restaurantes.add(Restaurante("Chester", "Pastas"))
+        val adapter =  AdapterRestaurante(restaurantes)
+        val db = FirebaseFirestore.getInstance()
+        db.collection("Restaurantes").get().addOnSuccessListener { result ->
+            result.documents.forEach {
+                restaurantes.add(Restaurante(it.get("Nombre").toString(), it.get("Categoria").toString(),it.get("Logo").toString()))
+            }
+            adapter.notifyDataSetChanged()
+        }
 
-
-        val adapter = AdapterRestaurante(restaurantes)
         recyclerView.adapter = adapter
 
         return root
@@ -73,6 +73,7 @@ class HomeFragment : Fragment() {
                 val intent = Intent(it, Carrito::class.java)
                 it.startActivity(intent)
             }
+
         }
     }
 
